@@ -29,11 +29,29 @@ mat_data = io.loadmat(mat_file_path)
 
 facedat_data = mat_data['facedat']
 
-#print(type(facedat_data))
+print(type(facedat_data))
 
-print(facedat_data.shape)
+print(facedat_data)
 #(1, 20)
 
 
 
-print(facedat_data[0].size)
+print(facedat_data[0][19].size)
+
+
+dataset = []
+
+for i in range(facedat_data[0].size):
+    for j  in range (facedat_data[0][i].size):
+        dataset.append(facedat_data[0][i])
+    
+print(len(dataset))   
+
+
+print(dataset[0].dtypes.names) 
+
+
+print(facedat_data[0][])
+    
+    
+    
