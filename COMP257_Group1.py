@@ -21,9 +21,19 @@ from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
 from tensorflow import keras 
 from sklearn.metrics import classification_report, confusion_matrix
 
-#Data Load and preprocessing
-data=scipy.io.loadmat("umist_cropped.mat")
+
+file_path = r'C:\Users\ysaya\OneDrive\Desktop\Semester-5\Unsupervised\groupProject\umist_cropped.mat'
+
+# Load the mat file
+face_data = scipy.io.loadmat(file_path)
+
+print(dir(face_data))
+
+print(face_data.keys())
+
+data=face_data['facedat']
 print(dir(data))
+
 print(data.keys())
 data=data['facedat']
 
